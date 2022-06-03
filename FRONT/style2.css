@@ -269,3 +269,44 @@ nav {
     letter-spacing: 1px;
     text-align: center;
 }
+
+.card .back2 {
+    background:rgb(3, 35, 54);
+    padding: 1.603vh;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0vh 0.55vh 1.068vh rgba(0, 0, 0, 0.5);
+}
+
+.card .back2 .link {
+    border-top: 1px solid #f3f3f3;
+    height: 5.342vh;
+    line-height: 5.342vh;
+}
+
+.card .back2 .link a {
+    color: #f3f3f3;
+}
+
+.card .back2 h3 {
+    font-size: 3.206vh;
+    margin-top: 2.137vh;
+    letter-spacing: 0.214vh;
+}
+
+.card .back2 p {
+    letter-spacing: 0.107vh;
+    font-size: 1.603vh;
+}
+
+.createButton {
+    padding: 1em;
+    width: 100%;
+    border-radius: 1.068vh;
+    color: #f3f3f3;
+    background: rgb(242, 161, 9);
+    border: 0vh;
+}
