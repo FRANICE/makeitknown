@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(9, 74, 136);
+}
+.menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+    
+.cardView {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(9, 74, 136);
+}
+
+nav {
+    background:rgba(0, 0, 0, 0.5);
+    height: 8.548vh;
+    position: relative;
+}
+
+.contenedor {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 8.548vh;
+    z-index: 100;
+}
+
+.contenedor-logo {
+    margin: auto;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.contenedor-logo h2 {
+    color:rgb(242, 161, 9);
+    font-weight: 32.055vh;
+    font-size: 3.74vh;
+    letter-spacing: 0px;
+}
+
+.contenedor-logo h2 span {
+    color: #f3f3f3;
+}
+
+.links .link {
+    display: inline-block
+}
+
+.links .link a {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 2.137vh;
+    margin: 0 2.671vh;
+    letter-spacing: 0.321vh;
+    transition: 0.3s;
+}
+
+.links .link a:hover {
+    color:rgb(242, 161, 9);
+}
+
+.links .link a.logout:hover {
+    color: rgb(255, 0, 0);
+}
+
+.toggle {
+    color: #f3f3f3;
+    margin-left: 2.137vh;
+    font-size: 3.206vh;
+    transform: rotate(90deg);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    overflow: hidden;
+    height: calc(100vh - 8.548vh);
+    width: 100%;
+    left: 0%;
+    z-index: 1;
+    top: -100vh;
+    transition: 0.5s;
+}
+
+.links .link:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.active {
+    top: 8.548vh;
+    left: 0%;
+}
+
+.blur {
+    filter: blur(0.641vh);
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.card {
+    position: relative;
+    width: 32vh;
+    height: 40vh;
+    margin: 2.137vh;
+    
+}
+
+.cards .card:hover {
+    filter: blur(0.641vh);
+}
+
+.cards:hover .card {
+    filter: blur(0vh);
+    transition: 0.5s;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.069vh;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(64.109vh) rotateY(0deg);
+    box-shadow: 0vh 0.55vh 1.068vh rgba(0, 0, 0, 0.5);
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4.808vh;
+    line-height: 4.808vh;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 2.137vh;
+}
+
+.card .back {
+    transform: perspective(64.109vh) rotateY(180deg);
+    background:rgb(3, 35, 54);
+    padding: 1.603vh;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 0.55vh 1.068vh rgba(0, 0, 0,);
+}
+
+.card .back .link {
+    border-top: 0.107vh solid #f3f3f3;
+    height: 5.342vh;
+    line-height: 5.342vh;
+}
+
+.card .back .link span {
+    color: #f3f3f3;
+    font-size: 1.603vh;
+}
+
+.card .back h3 {
+    font-size: 3.206vh;
+    margin-top: 2.137vh;
+    letter-spacing: 0.214vh;
+}
+
+.card .back p {
+    letter-spacing: 0.107vh;
+    font-size: 1.603vh;
+}
+
+.card:hover .front {
+    transition-delay: 0.3s;
+    transform: perspective(64.109vh) rotateY(180deg);
+}
+
+.card:hover .back {
+    transition-delay: 0.3s;
+    transform: perspective(64.109vh) rotateY(360deg);
+}
+
+.card .create {
+    background: rgb(242, 161, 9);
+}
+
+.card .front2 {
+    box-shadow: 0vh 0.55vh 1.068vh rgba(0, 0, 0, 0.5);
+}
+
+.card .front2 h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4.808vh;
+    line-height: 4.808vh;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 2.137vh;
+}
+
+.deleteButton {
+    padding: 1em;
+    width: 100%;
+    border-radius: 1.068vh;
+    color: #f3f3f3;
+    background: rgba(255, 0, 0, 0.802);
+    border: 0vh;
+}
+
+.create1 {
+    background: transparent;
+    border: white;
+    height: 40px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.create2 {
+    background: transparent;
+    border: white;
+    height: 100px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.card .back2 {
+    background:rgb(3, 35, 54);
+    padding: 1.603vh;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0vh 0.55vh 1.068vh rgba(0, 0, 0, 0.5);
+}
+
+.card .back2 .link {
+    border-top: 1px solid #f3f3f3;
+    height: 5.342vh;
+    line-height: 5.342vh;
+}
+
+.card .back2 .link a {
+    color: #f3f3f3;
+}
+
+.card .back2 h3 {
+    font-size: 3.206vh;
+    margin-top: 2.137vh;
+    letter-spacing: 0.214vh;
+}
+
+.card .back2 p {
+    letter-spacing: 0.107vh;
+    font-size: 1.603vh;
+}
+
+.createButton {
+    padding: 1em;
+    width: 100%;
+    border-radius: 1.068vh;
+    color: #f3f3f3;
+    background: rgb(242, 161, 9);
+    border: 0vh;
+}
