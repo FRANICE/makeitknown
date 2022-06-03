@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Login</title>
+    <title>Registro</title>
 </head>
 <body>
     <div class="contenedor-logo">
@@ -14,27 +14,33 @@
     <div class="wrapper">
         <div class="title-text">
             <div class="title">
-                Iniciar Sesión
+                Registro
             </div>
         </div>
         <div class="form-container">
             <div class="form-inner">
                 <form action="#" class="login">
                     <div class="field">
-                        <input type="email" type="text" placeholder="Correo electrónico">
+                        <input name="username" id="username" type="text" placeholder="Nombre de usuario"/>
                     </div>
                     <div class="field">
-                        <input type="password" type="text" placeholder="Contraseña">
+                        <input name="email" id="email" type="text" placeholder="Email"/>
                     </div>
-                    <div class="pass-link">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    <div class="field">
+                        <input name="email_confirmation" id="email_confirmation" type="text" placeholder="Confirmar email"/>
+                    </div>
+                    <div class="field">
+                        <input name="password" id="password" type="password" placeholder="Contraseña"/>
+                    </div>
+                    <div class="field">
+                        <input name="password_confirmation" id="password_confirmation" type="password" placeholder="Confirmar contraseña"/>
                     </div>
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Iniciar sesión"/>
+                        <input type="submit" value="Registrarse"/>
                     </div>
                     <div class="signup-link">
-                        ¿No tienes cuenta? <a href="#">Regístrate</a>
+                        ¿Ya tienes cuenta? <a href="#">Iniciar sesión</a>
                     </div>
                 </form>
             </div>
