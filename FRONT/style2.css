@@ -246,3 +246,26 @@ nav {
     background: rgba(255, 0, 0, 0.802);
     border: 0vh;
 }
+
+.create1 {
+    background: transparent;
+    border: white;
+    height: 40px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.create2 {
+    background: transparent;
+    border: white;
+    height: 100px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+}
