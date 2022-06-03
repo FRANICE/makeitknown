@@ -12,6 +12,12 @@ html, body {
     height: 100%;
     width: 100%;
     place-items: center;
+    background-image: url(
+    "../static/makeitknownfondo.png");
+    background-position: center center;     
+    background-attachment: fixed;  
+    background-repeat: no-repeat;  
+    background-size: auto;
 }
 
 .contenedor-logo {
