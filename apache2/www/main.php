@@ -1,3 +1,11 @@
+<?php
+    $conn = new mysqli('172.16.0.2', 'root', '1234', 'mysitedb');
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="es-ES" dir="ltr">
 <head>
@@ -26,19 +34,29 @@
         </nav>
     </div>
     <div class="cardView">
-        <div class="card">
-            <div class="face front">
-                <img src="./static/1.jpeg" alt="">
-                <h3>iPhone encontrado iPhonoñ</h3>
-            </div>
-            <div class="face back">
-                <h3>iPhone encontrado</h3>
-                <p>Se ha encontrado un iPhone en la cafetería de FNAC de A Coruña sobre las 18.30 del martes, 23 de Abril de 2022. Se ha entregado al responsable del establecimiento. Ha encontrado un iPhone en la cafetería de FNAC de A Coruña sobre las 18.30 del martes, 23 de Abril de 2022. Se ha entregado al responsable del establecimiento. Ha encontrado un iPhone en la</p>
-                <div class="link">
-                    <span>Publicado por: "usuario"</nombre></span>
-                </div>
-            </div>
-        </div>
+    <?php
+        // Lanzar una query
+        $query = 'SELECT * FROM tCard';
+        $result = $conn->query($query);
+
+        // Recorrer el resultado
+        while($row = $result->fetch_assoc()) {
+            echo '<div class="card">
+                    <div class="face front">
+                        <img src="'.$row['picture'].'" alt="">
+                        <h3>'.$row['title'].'</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>'.$row['title'].'</h3>
+                        <p>'.$row['description'].'</p>
+                        <div class="link">
+                            <span>Publicado el: '.$row['publication_date'].'</nombre></span>
+                        </div>
+                    </div>
+                </div>';
+        }
+        $conn->close();
+    ?>
     </div>
     <script src="./menu.js"></script>
 </body>
