@@ -35,7 +35,7 @@
     </div>
     <div class="cardView">
         <div class="card">
-            <a href="#" class="face front2 create">
+            <a href="http://localhost:8085/create_contributions.php" class="face front2 create">
                 <img src="./static/create.png" alt="">
                 <h3>Crear</h3>
             </a>
