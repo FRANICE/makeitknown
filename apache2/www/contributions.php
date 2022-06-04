@@ -1,3 +1,11 @@
+<?php
+    $conn = new mysqli('172.16.0.2', 'root', '1234', 'mysitedb');
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="es-ES" dir="ltr">
 <head>
@@ -32,19 +40,30 @@
                 <h3>Crear</h3>
             </a>
         </div>
-        <div class="card">
-            <div class="face front">
-                <img src="./static/1.jpeg" alt="">
-                <h3>iPhone encontrado</h3>
-            </div>
-            <div class="face back">
-                <h3 class="titleH3">iPhone encontrado</h3>
-                <p>Se ha encontrado un iPhone en la cafetería de FNAC de A Coruña sobre las 18.30 del martes, 23 de Abril de 2022. Se ha entregado al responsable del establecimiento.</p>
-                <div>
-                    <button class="deleteButton" action="deleteCard.php" method="delete"><span>Eliminar</span></button>
-                </div>
-            </div>
-        </div>
+        <?php
+            // Lanzar una query
+            // $query = 'SELECT * FROM tCard WHERE id_user = '.$_SESSION['id_user'];
+            $query = 'SELECT * FROM tCard WHERE user_id = 1';
+            $result = $conn->query($query);
+
+            // Recorrer el resultado
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="card">
+                        <div class="face front">
+                            <img src="'.$row['picture'].'" alt="">
+                            <h3>'.$row['title'].'</h3>
+                        </div>
+                        <div class="face back">
+                            <h3>'.$row['title'].'</h3>
+                            <p>'.$row['description'].'</p>
+                            <div>
+                                <button class="deleteButton" action="deleteCard.php" method="delete"><span>Eliminar</span></button>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        $conn->close();
+    ?>
     <div>
     <script src="./menu.js"></script>
 </body>
