@@ -25,27 +25,26 @@
             </div>
         </nav>
     </div>
-
-    <div class="cardView">
+    <form action="#" class="cardView">
         <div class="card">
             <div class="face front2 create">
-                <span data-placeholder="&#x"></span>
-                <h3>Añadir foto</h3>
+                <div class="custom-input">
+                    <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
+                </div>
             </div>
         </div>
-
         <div class="card">
             <div class="face back2 create">
                 <input type="text" placeholder="Añadir título" class="create1"></input>
                 <input type="text" placeholder="Añadir descripción" class="create2"></input>
                 <div>
                     <div>
-                        <button class="createButton" action="deleteCard.php" method="delete"><span>Publicar</span></button>
+                        <input type="submit" value="Publicar" class="createButton" action="deleteCard.php" method="delete"></input>
                     </div>
                 </div>
             </div>
         </div>
-    <div>
+    </form>
     <script src="./menu.js"></script>
 </body>
 </html>
