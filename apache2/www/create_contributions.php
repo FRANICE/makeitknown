@@ -1,3 +1,11 @@
+<?php
+    $conn = new mysqli('172.16.0.2', 'root', '1234', 'mysitedb');
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="es-ES" dir="ltr">
 <head>
