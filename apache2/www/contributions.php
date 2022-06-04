@@ -3,7 +3,15 @@
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
+    
+    if (isset($_POST['submit'])) {
+        $id = $_POST['id'];
+        $query = 'DELETE FROM tCard WHERE id = '.$id;
+        if ($conn->query($query) === FALSE) {
+            echo "Error: " . $query . "<br>" . $conn->error;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +34,8 @@
                     <h2>make<span>it</span>known</h2>
                 </div>
                 <ul class="links">
-                    <li class="link"><a href="#">¿Qué está perdido?</a></li>
-                    <li class="link"><a href="#">Mis aportaciones</a></li>
+                    <li class="link"><a href="http://localhost:8085/main.php">¿Qué está perdido?</a></li>
+                    <li class="link"><a href="http://localhost:8085/contributions.php">Mis aportaciones</a></li>
                     <li class="link"><a href="#">Cerrar sesión</a></li>
                 </ul>
             </div>
@@ -43,7 +51,7 @@
         <?php
             // Lanzar una query
             // $query = 'SELECT * FROM tCard WHERE id_user = '.$_SESSION['id_user'];
-            $query = 'SELECT * FROM tCard WHERE user_id = 1';
+            $query = 'SELECT * FROM tCard WHERE user_id = 2';
             $result = $conn->query($query);
 
             // Recorrer el resultado
@@ -56,9 +64,10 @@
                         <div class="face back">
                             <h3>'.$row['title'].'</h3>
                             <p>'.$row['description'].'</p>
-                            <div>
-                                <button class="deleteButton" action="deleteCard.php" method="delete"><span>Eliminar</span></button>
-                            </div>
+                            <form action="contributions.php" method="post">
+                                <input type="hidden" name="id" value="'.$row['id'].'">
+                                <input class="deleteButton" name="submit" type="submit" value="Eliminar">
+                            </form>
                         </div>
                     </div>';
             }
