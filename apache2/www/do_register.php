@@ -60,3 +60,4 @@ try{
 }
 //Si todo ha ido correctamente, "success" será True, esta información será enviada a traves de la url, y se recibirá en register.php, lo que pintará un mensage en pantalla.
 header("Location: register.php?success=True");
+?>
