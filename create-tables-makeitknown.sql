@@ -15,7 +15,7 @@ CREATE TABLE tCard (
   picture VARCHAR(500) NOT NULL,
   title VARCHAR(25) NOT NULL,
   `description` VARCHAR(355) NOT NULL,
-  publication_date DATE NOT NULL DEFAULT CURDATE(),
+  publication_date DATETIME NOT NULL DEFAULT CURDATE(),
   user_id INTEGER NOT NULL,
   
   CONSTRAINT user_card FOREIGN KEY (user_id) REFERENCES tUser(id)
