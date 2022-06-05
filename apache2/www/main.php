@@ -3,7 +3,12 @@
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
+    
+    session_start();
+    if (empty($_SESSION["user_id"])) {
+        header ("Location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,7 @@
                 <ul class="links">
                     <li id="MenuOp1" class="link"><a href="main.php">¿Qué está perdido?</a></li>
                     <li id="MenuOp2" class="link"><a href="contributions.php">Mis aportaciones</a></li>
-                    <li id="MenuOp3" class="link"><a href="#" class="logout">Cerrar sesión</a></li>
+                    <li id="MenuOp3" class="link"><a href="do_logout.php" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
