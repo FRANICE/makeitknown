@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+    if (empty($_SESSION["user_id"])) {
+        header ("Location: login.php");
+    } else {
+        $user_id = $_SESSION["user_id"];
+    }
+
 $target_dir = "assets/";
 $item_uploaded = false;
 // $user_id_to_insert = $_SESSION['user_id'];
@@ -15,7 +22,7 @@ if (isset($_POST['submit'])) {
         die("Connection failed: " . $conn->connect_error);
     } 
 
-    $query = 'INSERT INTO tCard (picture, title, `description`, publication_date, user_id) VALUES ("'.$target_file.'", "'.$title.'", "'.$description.'", NOW(), 2)';
+    $query = 'INSERT INTO tCard (picture, title, `description`, publication_date, user_id) VALUES ("'.$target_file.'", "'.$title.'", "'.$description.'", NOW(), '.$user_id.')';
 
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
         if ($conn->query($query) === TRUE) {
@@ -58,7 +65,7 @@ if (isset($_POST['submit'])) {
                 <ul class="links">
                     <li class="link"><a href="main.php">¿Qué está perdido?</a></li>
                     <li class="link"><a href="contributions.php">Mis aportaciones</a></li>
-                    <li class="link"><a href="#" class="logout">Cerrar sesión</a></li>
+                    <li class="link"><a href="do_logout.php" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
