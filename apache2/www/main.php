@@ -23,11 +23,11 @@
                     |||
                 </div>
                 <div class="contenedor-logo">
-                    <h2>make<span>it</span>known</h2>
+                    <a href="main.php" style="text-decoration: none"><h2>make<span>it</span>known</h2></a>
                 </div>
                 <ul class="links">
-                    <li id="MenuOp1" class="link"><a href="#">¿Qué está perdido?</a></li>
-                    <li id="MenuOp2" class="link"><a href="#">Mis aportaciones</a></li>
+                    <li id="MenuOp1" class="link"><a href="main.php">¿Qué está perdido?</a></li>
+                    <li id="MenuOp2" class="link"><a href="contributions.php">Mis aportaciones</a></li>
                     <li id="MenuOp3" class="link"><a href="#" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
@@ -36,7 +36,7 @@
     <div class="cardView">
     <?php
         // Lanzar una query
-        $query = 'SELECT * FROM tCard';
+        $query = 'SELECT * FROM tCard ORDER BY publication_date DESC';
         $result = $conn->query($query);
 
         // Recorrer el resultado
