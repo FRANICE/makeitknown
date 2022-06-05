@@ -31,19 +31,19 @@
                     |||
                 </div>
                 <div class="contenedor-logo">
-                    <h2>make<span>it</span>known</h2>
+                <a href="main.php" style="text-decoration: none"><h2>make<span>it</span>known</h2></a>
                 </div>
                 <ul class="links">
-                    <li class="link"><a href="http://localhost:8085/main.php">¿Qué está perdido?</a></li>
-                    <li class="link"><a href="http://localhost:8085/contributions.php">Mis aportaciones</a></li>
-                    <li class="link"><a href="#">Cerrar sesión</a></li>
+                    <li class="link"><a href="main.php">¿Qué está perdido?</a></li>
+                    <li class="link"><a href="contributions.php">Mis aportaciones</a></li>
+                    <li class="link"><a href="#" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="cardView">
         <div class="card">
-            <a href="http://localhost:8085/create_contributions.php" class="face front2 create">
+            <a href="create_contributions.php" class="face front2 create">
                 <img src="./static/create.png" alt="">
                 <h3>Crear</h3>
             </a>
@@ -51,7 +51,7 @@
         <?php
             // Lanzar una query
             // $query = 'SELECT * FROM tCard WHERE id_user = '.$_SESSION['id_user'];
-            $query = 'SELECT * FROM tCard WHERE user_id = 2';
+            $query = 'SELECT * FROM tCard WHERE user_id = 2 ORDER BY publication_date DESC';
             $result = $conn->query($query);
 
             // Recorrer el resultado
