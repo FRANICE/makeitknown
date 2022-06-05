@@ -4,6 +4,13 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    session_start();
+    if (empty($_SESSION["user_id"])) {
+        header ("Location: login.php");
+    } else {
+        $user_id = $_SESSION["user_id"];
+    }
     
     if (isset($_POST['submit'])) {
         $id = $_POST['id'];
@@ -36,7 +43,7 @@
                 <ul class="links">
                     <li class="link"><a href="main.php">¿Qué está perdido?</a></li>
                     <li class="link"><a href="contributions.php">Mis aportaciones</a></li>
-                    <li class="link"><a href="#" class="logout">Cerrar sesión</a></li>
+                    <li class="link"><a href="do_logout.php" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -50,8 +57,8 @@
         </div>
         <?php
             // Lanzar una query
-            // $query = 'SELECT * FROM tCard WHERE id_user = '.$_SESSION['id_user'];
-            $query = 'SELECT * FROM tCard WHERE user_id = 2 ORDER BY publication_date DESC';
+            $query = 'SELECT * FROM tCard WHERE user_id = '.$user_id.' ORDER BY publication_date DESC';
+            // $query = 'SELECT * FROM tCard WHERE user_id = 2 ORDER BY publication_date DESC';
             $result = $conn->query($query);
 
             // Recorrer el resultado
