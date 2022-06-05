@@ -53,12 +53,12 @@ if (isset($_POST['submit'])) {
                     |||
                 </div>
                 <div class="contenedor-logo">
-                    <h2>make<span>it</span>known</h2>
+                <a href="main.php" style="text-decoration: none"><h2>make<span>it</span>known</h2></a>
                 </div>
                 <ul class="links">
                     <li class="link"><a href="main.php">¿Qué está perdido?</a></li>
                     <li class="link"><a href="contributions.php">Mis aportaciones</a></li>
-                    <li class="link"><a href="#">Cerrar sesión</a></li>
+                    <li class="link"><a href="#" class="logout">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
